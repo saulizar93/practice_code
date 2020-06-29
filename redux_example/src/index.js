@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 //import { createStore } to create the centralized redux store
 import { createStore } from 'redux';
@@ -23,11 +24,12 @@ const store = createStore(
 
 //wrap App with <Provider>
 ReactDOM.render(
-  <React.StrictMode>
+  
   <Provider store={store}>
+    <Router>
     <App />
-  </Provider>
-  </React.StrictMode>,
+    </Router>
+  </Provider>,
   document.getElementById('root')
 );
 

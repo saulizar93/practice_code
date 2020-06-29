@@ -1,6 +1,9 @@
 import React from 'react';
 import {useSelector, useDispatch} from 'react-redux';
 import { increment, decrement, signIn } from './actions';
+import {Switch,Route } from 'react-router-dom';
+import ClippedDrawer from './components/drawer';
+import SimpleMenu from './components/dropDown';
 
 //useSelector allows us to access the variables stored in the store
 //useDispatch allows us to dispatch an action
@@ -32,7 +35,12 @@ function App() {
       <button onClick={()=> dispatch(signIn())}>LogIn/LogOut</button>
       {isLogged ? <h3>Login: True</h3>:<h3>Login: False</h3>}
       {isLogged ? <h3>Valuable information I shouldn't see</h3>:<h3>Normal information</h3>}
+      <Switch>
+      <Route path='/drawer' component={ClippedDrawer} />
+      <Route path='/menu' component={SimpleMenu} />
+    </Switch>
     </div>
+    
   );
 }
 
