@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { BrowserRouter as Router } from 'react-router-dom';
+//import 'bootstrap/dist/css/bootstrap.css'
 
 //import { createStore } to create the centralized redux store
 import { createStore } from 'redux';

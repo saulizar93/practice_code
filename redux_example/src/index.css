@@ -21,3 +21,9 @@ code {
   color: white;
   border-color: white;
 }
+
+#image {
+  width:150px;
+  height:auto;
+  margin-top:6px;
+}

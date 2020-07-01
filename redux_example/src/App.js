@@ -1,46 +1,49 @@
 import React from 'react';
-import {useSelector, useDispatch} from 'react-redux';
-import { increment, decrement, signIn } from './actions';
 import {Switch,Route } from 'react-router-dom';
 import ClippedDrawer from './components/drawer';
-import SimpleMenu from './components/dropDown';
+import frontPage from './components/frontPage';
+import homePage from './components/homePage';
+import EventHandler from './components/calendar';
+import testComponent from './components/testComponent';
+import GetBatchDetails from './components/batchDetails';
+// import {useDispatch,useSelector} from 'react-redux';
+// import { increment, decrement, signIn } from './actions';
 
 //useSelector allows us to access the variables stored in the store
 //useDispatch allows us to dispatch an action
 
 // { increment, decrement} are our actions
 
-
-
-
 function App() {
-  //store in counter the value of the state.counterReducer
-  const counter = useSelector(state=> state.counterReducer);
 
-  //store is isLogged the boolena stored in state.isLogged
-  const isLogged = useSelector(state=> state.loggedReducer);
+  // //store in counter the value of the state.counterReducer
+  // const counter = useSelector(state=> state.counterReducer);
 
-  //used to dispatch actions
-  const dispatch= useDispatch();
+  // //store is isLogged the boolena stored in state.isLogged
+  // const isLogged = useSelector(state=> state.loggedReducer);
 
-  //button + will increment by 5, you can change it on the action object
-  //button - will decrement by 5, you can change it on the action object
-  //isLogged will alternate between "TRUE" and "FALSE", and will print accordintly
-
+  // //used to dispatch actions
+  // const dispatch= useDispatch();
   return (
-    <div className="App">
-      <h1>Counter {counter}</h1>
-      <button onClick={()=> dispatch(increment(5))}>+</button>
-      <button onClick={()=> dispatch(decrement(5))}>-</button>
-      <button onClick={()=> dispatch(signIn())}>LogIn/LogOut</button>
-      {isLogged ? <h3>Login: True</h3>:<h3>Login: False</h3>}
-      {isLogged ? <h3>Valuable information I shouldn't see</h3>:<h3>Normal information</h3>}
+
+     <div>
+    {/* //   <div className="App">
+    //   <h1>Counter {counter}</h1>
+    //   <button onClick={()=> dispatch(increment(5))}>+</button>
+    //   <button onClick={()=> dispatch(decrement(5))}>-</button>
+    //   <button onClick={()=> dispatch(signIn())}>LogIn/LogOut</button>
+    //   {isLogged ? <h3>Login: True</h3>:<h3>Login: False</h3>}
+    //   {isLogged ? <h3>Valuable information I shouldn't see</h3>:<h3>Normal information</h3>}
+    // </div> */}
       <Switch>
+      <Route path='/' component={homePage} exact/>
       <Route path='/drawer' component={ClippedDrawer} />
-      <Route path='/menu' component={SimpleMenu} />
+      <Route path='/frontpage' component={frontPage} />
+      <Route path='/calendar' component={EventHandler} />
+      <Route path='/test' component={testComponent} />
+      <Route path='/batchdetails' component={GetBatchDetails} />
     </Switch>
     </div>
-    
   );
 }
 

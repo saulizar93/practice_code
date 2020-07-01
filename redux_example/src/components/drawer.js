@@ -12,7 +12,6 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
-import RevatureLogo from './RevatureLogo.png';
 import Button from '@material-ui/core/Button';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
@@ -60,7 +59,7 @@ export default function ClippedDrawer() {
       <AppBar id='background' position="fixed" className={classes.appBar}>
         <Toolbar>
           <Typography variant="h6" noWrap>
-           <img src={RevatureLogo} alt='Revature Logo' />
+           <img id='image' src='https://3g4d13k75x47q7v53surz1gi-wpengine.netdna-ssl.com/wp-content/themes/revature/imgs/logo.png' alt='Revature Logo' />
           </Typography>
         </Toolbar>
       </AppBar>
