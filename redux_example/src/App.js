@@ -1,6 +1,5 @@
 import React from 'react';
 import {Switch,Route } from 'react-router-dom';
-import ClippedDrawer from './components/drawer';
 import frontPage from './components/frontPage';
 import homePage from './components/homePage';
 import EventHandler from './components/calendar';
@@ -37,7 +36,6 @@ function App() {
     // </div> */}
       <Switch>
       <Route path='/' component={homePage} exact/>
-      <Route path='/drawer' component={ClippedDrawer} />
       <Route path='/frontpage' component={frontPage} />
       <Route path='/calendar' component={EventHandler} />
       <Route path='/test' component={testComponent} />

@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 import { useState } from "react";
-//import { Button } from "@material-ui/core";
+import { Button } from "@material-ui/core";
 
 export default function GetBatchDetails() {
   const [details, setDetails] = useState([]);
@@ -21,15 +21,13 @@ export default function GetBatchDetails() {
   console.log(details);
   return (
     <>
-      <br />
-      <br />
       {/* <Button variant="contained" color="primary" onClick={handleSubmit}>
         Display
       </Button> */}
 
       {details.map((detail) => (
         <div key={detail.id}>
-          <br />
+          <Button variant='outlined'>
           <table>
           
           <tr>Batch ID: {detail.batchId}</tr>
@@ -41,6 +39,7 @@ export default function GetBatchDetails() {
           <tr>Current Week: {detail.currentWeek}</tr>
           <tr>Progress: {(detail.currentWeek * 100) / 10}%</tr>
           </table>
+          </Button>
           <br />
         </div>
       ))}
